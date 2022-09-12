@@ -1,0 +1,13 @@
+
+server:
+    create api route to retrieve domain pricing
+    handler for pricing api
+    create local storage util for domain prices
+
+client:
+    fetch details from server
+    fill ui with information from server
+    
+namecheap login:
+    user - cris
+    pass - 340822cm
