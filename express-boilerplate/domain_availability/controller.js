@@ -20,9 +20,9 @@ export async function domainAvailability(req, res) {
     let strPostion = strRes.search("Available")
     let availableStr = strRes.substring(strPostion, strPostion + 17)
     let availability = availableStr.search("true")
-    let availableStatus = availability === -1 ? "unavailable" : "available"
+    let availableStatus = availability === -1 ? false : true
 
-    res.status(200).json({ domain, availability: availableStatus })
+    res.status(200).json({ strRes, domain, availability: availableStatus })
   } catch (err) {
     throw err
   }

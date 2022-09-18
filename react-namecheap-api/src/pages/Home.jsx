@@ -5,47 +5,67 @@ import {
   Container,
   Center,
   Stack,
-  Skeleton,
   Grid,
   Text,
+  Footer,
 } from "@mantine/core"
-import useFetch from "../hooks/useFetch"
 import SkeletonCard from "../components/SkeletonCard"
 import DomainCard from "../components/DomainCard"
+import axios from "axios"
+const date = new Date()
 
 const Home = () => {
-  //
-  const [domain, setDomain] = useState("ladylover.com")
-  const [availability, setAvailability] = useState(true)
-  const [price, setPrice] = useState("0.00")
+  const [loading, setLoading] = useState(false)
+  const [data, setData] = useState({})
 
-  const getDomain = function (url) {
-    setDomain(url)
+  const getDomain = async function (url) {
+    try {
+      setData({})
+      setLoading(true)
+      setTimeout(async () => {
+        const { data } = await axios.post("http://localhost:6699/domain", {
+          domain: url,
+        })
+        setData(data)
+        setLoading(false)
+      }, 1000)
+    } catch (err) {
+      throw err
+    }
   }
 
   return (
     <Container>
       <Center>
         <Stack spacing='lg'>
-          <Text sx={{ textDecoration: "underline" }} align='center' size={"xs"}>
-            cristhedev.com
-          </Text>
           <Title
             align='center'
             order={3}
             sx={{ textTransform: "uppercase", paddingBottom: "3rem" }}>
             Find your next DOMAIN!
           </Title>
-          <SearchBar getDomain={getDomain} />
+          <SearchBar getDomain={getDomain} loading={loading} />
           <Grid mt={"25px"}>
-            <DomainCard
-              domain={domain}
-              price={price}
-              availability={availability}
-            />
-            {/* <SkeletonCard /> */}
+            {data.domain && (
+              <DomainCard
+                domain={data.domain}
+                price={15.0}
+                availability={data.availability}
+              />
+            )}
+            {loading && <SkeletonCard />}
           </Grid>
         </Stack>
+        <Text
+          sx={{
+            position: "absolute",
+            bottom: "1rem",
+            color: "gray",
+            opacity: 0.5,
+          }}
+          size='xs'>
+          cristhedev.com/blog | {date.getFullYear()} ©
+        </Text>
       </Center>
     </Container>
   )

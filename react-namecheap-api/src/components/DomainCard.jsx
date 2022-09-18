@@ -1,18 +1,12 @@
-import {
-  Text,
-  Card,
-  Badge,
-  Grid,
-  Button,
-  Divider,
-  Transition,
-} from "@mantine/core"
+import { Text, Card, Badge, Grid, Button, Divider } from "@mantine/core"
 import { useHover } from "@mantine/hooks"
 
 const DomainCard = ({ domain, availability, price }) => {
   const { hovered, ref } = useHover()
   return (
-    <Card sx={{ width: "100%", backgroundColor: "inherit" }} align='center'>
+    <Card
+      sx={{ width: "100%", backgroundColor: "inherit", padding: "3rem" }}
+      align='center'>
       <Grid sx={{ paddingBottom: "1rem" }} align='center' columns={24}>
         <Grid.Col span={6}>
           <Badge radius='sm' size='md' color={availability ? "lime" : "red"}>

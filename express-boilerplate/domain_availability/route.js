@@ -3,6 +3,6 @@ import { domainAvailability } from "./controller.js"
 
 const router = Router()
 
-router.route("/domain").get(domainAvailability)
+router.route("/domain").post(domainAvailability)
 
 export default router

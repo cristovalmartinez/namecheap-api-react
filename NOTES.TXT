@@ -11,3 +11,7 @@ client:
 namecheap login:
     user - cris
     pass - 340822cm
+
+npm start in the client to start the development server
+
+nodemon the server file to start the development server
