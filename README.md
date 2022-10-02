@@ -9,16 +9,9 @@
 
 <p>Objective:</p>
 <br>
-<p>Retrieve namecheap data to determine the cost and availability of a particular domain</p>
-> <p>By: Cristoval M. </p>
-> <br>
-> <br>
-
+<p>consume namecheap api for domain availability</p>
+<p>By: Cristoval M. </p>
 <br>
-<br>
-
-### :dart: Getting Started
-
 <p>for more information, see the breakdown at: <a href="https://cristhedev/blog/">cristhedev.com/blog/namecheap-api</a>.</p>
 
 <p></p>
@@ -26,7 +19,7 @@
 ### :dart: Config
 
 <p>
-just react no express server is required
+name cheap requires a static IP address to be whitelisted on their portal. docs: https://www.namecheap.com/support/api/intro/
 </p>
 
 1. `npm i dotenv -D`
