@@ -12,7 +12,7 @@
 <p>consume namecheap api for domain availability</p>
 <p>By: Cristoval M. </p>
 <br>
-<p>for more information, see the breakdown at: <a href="https://cristhedev/blog/">cristhedev.com/blog/namecheap-api</a>.</p>
+<p>for more, see the breakdown at: <a href="https://cristhedev/blog/">cristhedev.com/blog/namecheap-api</a>.</p>
 
 <p></p>
 
@@ -22,14 +22,25 @@
 name cheap requires a static IP address to be whitelisted on their portal. docs: https://www.namecheap.com/support/api/intro/
 </p>
 
-1. `npm i dotenv -D`
+<p>Since a valid IP address is required by CORS, the namecheap API needs to be consumed from the server, thus needing to create an express API. (namecheap API won't work from the client).<p/>
 
-### :space_invader: Tech Stack
 
-<p>Server with global node modules. Install dotenv (optional)</p>
+<p>To start the express server:</p>
+`cd express-boilerplate`
+`npm run dev` will start the express development server.
 
-- [Node.js](https://nodejs.org/en/docs/)
-- [dotenv](https://www.npmjs.com/package/dotenv)
+
+<p>To start the client:</p>
+`cd into react-namecheap-api`
+`npm start` to run the client
+
+### :space_invader: Tech
+
+
+
+- Express
+- React
+- 
 </div>
 
 <div align="center">
